@@ -108,7 +108,6 @@ export class Webhook {
   public addEmbed(embed: Embed): Webhook {
     if (typeof this.embeds === 'undefined') this.embeds = [embed.toObject()]
     else if (this.embeds.length <= 10) this.embeds?.push(embed.toObject())
-    else throw new Error('Maximum 10 embeds')
 
     return this
   }
