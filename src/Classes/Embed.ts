@@ -217,6 +217,19 @@ export class Embed {
   }
 
   /**
+   * Set bulk field information.
+   * Maximum 25 fields
+   *
+   * @param fields Array<IFields>
+   * @returns Embed
+   */
+  public setFields(fields: Array<IField>): Embed {
+    this.fields = fields.slice(0, 25)
+
+    return this
+  }
+
+  /**
    * Generate object based on input
    *
    * @returns IEmbed
