@@ -216,10 +216,6 @@ export class Embed {
     return this
   }
 
-  public setFields(fields: Array<IField>):Embed {
-    if (typeof)
-  }
-
   /**
    * Generate object based on input
    *
