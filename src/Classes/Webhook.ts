@@ -87,12 +87,13 @@ export class Webhook {
 
   /**
    * Message contents.
+   * Max 2000 characters
    *
    * @param content string
    * @returns this
    */
   public setContent(content: string): Webhook {
-    this.content = content
+    this.content = content.substring(0, 1999)
     return this
   }
 
