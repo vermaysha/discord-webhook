@@ -124,6 +124,8 @@ export class Webhook {
 
   /**
    * Send webhook
+   *
+   * @returns AxiosPromise<any>
    */
   public async send() {
     return this.client
@@ -139,6 +141,9 @@ export class Webhook {
 
   /**
    * Modify the current webhook.
+   *
+   * @param options IWebHookParameter
+   * @returns AxiosPromise<IWebhookResponse>
    */
   public async modify(
     options: IWebhookParameter,
@@ -156,6 +161,8 @@ export class Webhook {
 
   /**
    * Get the current webhook.
+   *
+   * @returns AxiosPromise<IWebhookResponse>
    */
   public async get(): AxiosPromise<IWebhookResponse> {
     return this.client
@@ -170,6 +177,8 @@ export class Webhook {
 
   /**
    * Check whether or not the current webhook is valid.
+   *
+   * @returns Promise<boolean>
    */
   public async isValid(): Promise<boolean> {
     return this.get()
