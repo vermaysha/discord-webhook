@@ -53,7 +53,7 @@ export class Webhook {
   }
 
   /**
-   * Webhook username override.
+   * Set Webhook username override.
    *
    * @param username string
    * @returns Embed
@@ -64,7 +64,7 @@ export class Webhook {
   }
 
   /**
-   * Webhook avatar override.
+   * Set Webhook avatar override.
    *
    * @param url string
    * @returns Embed
@@ -75,7 +75,7 @@ export class Webhook {
   }
 
   /**
-   * Whether or not this notification should be read as text to speech.
+   * Set Whether or not this notification should be read as text to speech.
    *
    * @param flag boolean
    * @returns Embed
@@ -86,7 +86,7 @@ export class Webhook {
   }
 
   /**
-   * Message contents.
+   * Set Message contents.
    * Max 2000 characters
    *
    * @param content string
@@ -112,7 +112,7 @@ export class Webhook {
   }
 
   /**
-   * Contents of a file being sent.
+   * Set Contents of a file being sent.
    *
    * @param file Attachment | string
    * @returns Embed
