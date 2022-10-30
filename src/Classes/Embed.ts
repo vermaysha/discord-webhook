@@ -209,11 +209,15 @@ export class Embed {
    * @param field Field
    * @returns this
    */
-  public setFields(field: IField): Embed {
+  public addField(field: IField): Embed {
     if (typeof this.fields === 'undefined') this.fields = [field]
     else if (this.fields.length <= 25) this.fields?.push(field)
 
     return this
+  }
+
+  public setFields(fields: Array<IField>):Embed {
+    if (typeof)
   }
 
   /**
