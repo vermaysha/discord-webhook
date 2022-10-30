@@ -2,9 +2,17 @@
   "name": "@vermaysha/discord-webhook",
   "version": "1.0.0",
   "description": "Discord Webhook built using TypeScript which supports Browser and Node",
-  "main": "src/index.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build:tsc": "tsc --build --force",
+    "build:docs": "typedoc",
+    "build": "npm run build:tsc && npm run build:docs",
+    "prepare": "husky install",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint ./src --ignore-path .gitignore --ext .js,.ts,.jsx,.tsx",
+    "lint:fix": "eslint ./src --fix --ext .js,.ts,.jsx,.tsx",
+    "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\""
   },
   "repository": {
     "type": "git",
@@ -28,5 +36,25 @@
   },
   "files": [
     "dist/**/*"
-  ]
+  ],
+  "lint-staged": {
+    "*.{ts,js}": "npm run lint",
+    "*.{ts,js,json}": "npm run format"
+  },
+  "devDependencies": {
+    "@types/eslint": "^8.4.9",
+    "@types/md5": "^2.3.2",
+    "@types/node": "^14.18.33",
+    "@types/prettier": "^2.7.1",
+    "@typescript-eslint/eslint-plugin": "^5.41.0",
+    "@typescript-eslint/parser": "^5.41.0",
+    "eslint": "^8.26.0",
+    "eslint-config-prettier": "^8.5.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1",
+    "tslib": "^2.4.0",
+    "typedoc": "^0.23.19",
+    "typescript": "^4.8.4"
+  }
 }
