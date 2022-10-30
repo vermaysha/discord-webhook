@@ -99,13 +99,16 @@ export class Webhook {
 
   /**
    * Add Embedded "rich" content.
+   * Max 10 embeds
    *
    * @param embed string
    * @returns this
+   * @throws {Error} if reached maximum count
    */
   public addEmbed(embed: Embed): Webhook {
     if (typeof this.embeds === 'undefined') this.embeds = [embed.toObject()]
-    else this.embeds?.push(embed.toObject())
+    else if (this.embeds.length <= 10) this.embeds?.push(embed.toObject())
+    else throw new Error('Maximum 10 embeds')
 
     return this
   }
@@ -124,7 +127,7 @@ export class Webhook {
   /**
    * Send webhook
    */
-  public send() {
+  public async send() {
     return this.client
       .request({
         method: 'POST',
@@ -156,7 +159,7 @@ export class Webhook {
   /**
    * Get the current webhook.
    */
-  public get(): AxiosPromise<IWebhookResponse> {
+  public async get(): AxiosPromise<IWebhookResponse> {
     return this.client
       .request({
         method: 'GET',
@@ -170,7 +173,7 @@ export class Webhook {
   /**
    * Check whether or not the current webhook is valid.
    */
-  public isValid(): Promise<boolean> {
+  public async isValid(): Promise<boolean> {
     return this.get()
       .then(() => true)
       .catch(() => false)
