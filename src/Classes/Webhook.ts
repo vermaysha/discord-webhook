@@ -93,7 +93,7 @@ export class Webhook {
    * @returns this
    */
   public setContent(content: string): Webhook {
-    this.content = content.substring(0, 1999)
+    this.content = content.substring(0, 2000)
     return this
   }
 
