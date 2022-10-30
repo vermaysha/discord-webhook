@@ -56,7 +56,7 @@ export class Webhook {
    * Webhook username override.
    *
    * @param username string
-   * @returns this
+   * @returns Embed
    */
   public setUsername(username: string): Webhook {
     this.username = username
@@ -67,7 +67,7 @@ export class Webhook {
    * Webhook avatar override.
    *
    * @param url string
-   * @returns this
+   * @returns Embed
    */
   public setAvatarUrl(url: string): Webhook {
     this.avatar_url = url
@@ -78,7 +78,7 @@ export class Webhook {
    * Whether or not this notification should be read as text to speech.
    *
    * @param flag boolean
-   * @returns this
+   * @returns Embed
    */
   public setTTS(flag: boolean): Webhook {
     this.tts = flag
@@ -90,7 +90,7 @@ export class Webhook {
    * Max 2000 characters
    *
    * @param content string
-   * @returns this
+   * @returns Embed
    */
   public setContent(content: string): Webhook {
     this.content = content.substring(0, 2000)
@@ -102,7 +102,7 @@ export class Webhook {
    * Max 10 embeds
    *
    * @param embed string
-   * @returns this
+   * @returns Embed
    */
   public addEmbed(embed: Embed): Webhook {
     if (typeof this.embeds === 'undefined') this.embeds = [embed.toObject()]
@@ -115,7 +115,7 @@ export class Webhook {
    * Contents of a file being sent.
    *
    * @param file Attachment | string
-   * @returns this
+   * @returns Embed
    */
   public setFile(file: IAttachment | string): Webhook {
     this.file = file
