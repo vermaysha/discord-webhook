@@ -31,9 +31,6 @@
     "url": "https://github.com/vermaysha/discord-webhook/issues"
   },
   "homepage": "https://github.com/vermaysha/discord-webhook#readme",
-  "engines": {
-    "node": "^16.17.1"
-  },
   "files": [
     "dist/**/*"
   ],
@@ -44,7 +41,7 @@
   "devDependencies": {
     "@types/eslint": "^8.4.9",
     "@types/md5": "^2.3.2",
-    "@types/node": "^14.18.33",
+    "@types/node": "^18.11.8",
     "@types/prettier": "^2.7.1",
     "@typescript-eslint/eslint-plugin": "^5.41.0",
     "@typescript-eslint/parser": "^5.41.0",
