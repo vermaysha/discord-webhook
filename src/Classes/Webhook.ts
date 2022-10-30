@@ -97,13 +97,15 @@ export class Webhook {
   }
 
   /**
-   * Embedded "rich" content.
+   * Add Embedded "rich" content.
    *
    * @param embed string
    * @returns this
    */
-  public setEmbed(embed: Embed): Webhook {
-    this.embeds?.push(embed.toObject())
+  public addEmbed(embed: Embed): Webhook {
+    if (typeof this.embeds === 'undefined') this.embeds = [embed.toObject()]
+    else this.embeds?.push(embed.toObject())
+
     return this
   }
 
@@ -122,29 +124,46 @@ export class Webhook {
    * Send webhook
    */
   public send() {
-    return this.client.request({
-      method: 'POST',
-      data: this.toObject(),
-    })
+    return this.client
+      .request({
+        method: 'POST',
+        data: this.toObject(),
+      })
+      .then((res) => res)
+      .catch((err) => {
+        throw new Error(err?.response?.data?.message)
+      })
   }
 
   /**
    * Modify the current webhook.
    */
-  public modify(options: IWebhookParameter) {
-    return this.client.request({
-      method: 'PATCH',
-      data: options,
-    })
+  public async modify(
+    options: IWebhookParameter,
+  ): AxiosPromise<IWebhookResponse> {
+    return this.client
+      .request({
+        method: 'PATCH',
+        data: options,
+      })
+      .then((res) => res)
+      .catch((err) => {
+        throw new Error(err?.response?.data?.message)
+      })
   }
 
   /**
    * Get the current webhook.
    */
   public get(): AxiosPromise<IWebhookResponse> {
-    return this.client.request({
-      method: 'GET',
-    })
+    return this.client
+      .request({
+        method: 'GET',
+      })
+      .then((res) => res)
+      .catch((err) => {
+        throw new Error(err?.response?.data?.message)
+      })
   }
 
   /**
