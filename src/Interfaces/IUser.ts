@@ -27,9 +27,24 @@ export interface IUser {
   bot?: boolean
 
   /**
+   * whether the user is an Official Discord System user (part of the urgent message system)
+   */
+  system?: boolean
+
+  /**
    * Whether or not the user has two-factor authentication enabled.
    */
   mfa_enabled?: boolean
+
+  /**
+   * the user's banner hash
+   */
+  banner?: string
+
+  /**
+   * the user's banner color encoded as an integer representation of hexadecimal color code
+   */
+  accent_color?: number
 
   /**
    * The user's chosen language option.
@@ -57,4 +72,9 @@ export interface IUser {
    * User's Nitro subscription type.
    */
   premium_type: number
+
+  /**
+   * the public flags on a user's account
+   */
+  public_flags?: number
 }
