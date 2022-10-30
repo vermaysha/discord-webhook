@@ -8,6 +8,11 @@ export interface IWebhookResponse {
   id: string
 
   /**
+   * 	the type of the webhook
+   */
+  type: number
+
+  /**
    * ID of the channel this webhook belongs to.
    * Snowflake
    */
@@ -38,4 +43,31 @@ export interface IWebhookResponse {
    * Secure token of the current webhook.
    */
   token: string
+
+  /**
+   * the bot/OAuth2 application that created this webhook
+   */
+  application_id: string
+
+  /**
+   * the url used for executing the webhook (returned by the webhooks OAuth2 flow)
+   */
+  url?: string
+
+  /**
+   * 	partial guild object
+   */
+  source_guild?: {
+    id: number
+    name: string
+    icon?: string
+  }
+
+  /**
+   * partial channel object
+   */
+  source_channel?: {
+    id: number
+    name: string
+  }
 }
