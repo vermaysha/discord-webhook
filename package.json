@@ -1,0 +1,32 @@
+{
+  "name": "@vermaysha/discord-webhook",
+  "version": "1.0.0",
+  "description": "Discord Webhook built using TypeScript which supports Browser and Node",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vermaysha/discord-webhook.git"
+  },
+  "keywords": [
+    "discord-webhook"
+  ],
+  "author": {
+    "email": "vermaysha@gmail.com",
+    "url": "https://vermaysha.com",
+    "name": "Ashary Vermaysha"
+  },
+  "license": "LGPL-2.1",
+  "bugs": {
+    "url": "https://github.com/vermaysha/discord-webhook/issues"
+  },
+  "homepage": "https://github.com/vermaysha/discord-webhook#readme",
+  "engines": {
+    "node": "^16.17.1"
+  },
+  "files": [
+    "dist/**/*"
+  ]
+}
