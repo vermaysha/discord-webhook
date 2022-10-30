@@ -204,13 +204,15 @@ export class Embed {
 
   /**
    * Set Field information
+   * Maximum 25 fields
    *
    * @param field Field
    * @returns this
    */
   public setFields(field: IField): Embed {
     if (typeof this.fields === 'undefined') this.fields = [field]
-    else this.fields?.push(field)
+    else if (this.fields.length <= 25) this.fields?.push(field)
+
     return this
   }
 
