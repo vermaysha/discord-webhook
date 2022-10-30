@@ -103,7 +103,6 @@ export class Webhook {
    *
    * @param embed string
    * @returns this
-   * @throws {Error} if reached maximum count
    */
   public addEmbed(embed: Embed): Webhook {
     if (typeof this.embeds === 'undefined') this.embeds = [embed.toObject()]
