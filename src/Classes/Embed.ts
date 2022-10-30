@@ -209,7 +209,8 @@ export class Embed {
    * @returns this
    */
   public setFields(field: IField): Embed {
-    this.fields?.push(field)
+    if (typeof this.fields === 'undefined') this.fields = [field]
+    else this.fields?.push(field)
     return this
   }
 
