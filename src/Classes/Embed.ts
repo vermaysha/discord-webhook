@@ -102,6 +102,17 @@ export class Embed {
   }
 
   /**
+   * Description of the embed.
+   *
+   * @param description string
+   * @returns Embed
+   */
+  public setDescription(description: string): Embed {
+    this.description = description
+    return this
+  }
+
+  /**
    * Set ISO8601 timestamp of the embed content.
    *
    * @returns this
