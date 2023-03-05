@@ -1,6 +1,6 @@
 {
   "name": "@vermaysha/discord-webhook",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "Discord Webhook built using TypeScript which supports Browser and Node",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
