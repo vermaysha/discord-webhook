@@ -1,4 +1,25 @@
-# Discord Webhook - TypeScript/JavaScript supported library
+<div align="center">
+  <h1>Discord Webhook - TypeScript/JavaScript supported library</h1>
+  
+  <p>
+        <a href="https://packagist.org/packages/vermaysha/discord-webhook">
+            <img src="https://img.shields.io/npm/v/@vermaysha/discord-webhook.svg?style=flat-square" alt="Latest Version on Packagist">
+        </a>
+        <a href="https://github.com/vermaysha/discord-webhook/actions/workflows/build.yml">
+            <img src="https://img.shields.io/github/actions/workflow/status/vermaysha/discord-webhook/build.yml?branch=master&amp;label=build&amp;style=flat-square" alt="GitHub Build Action Status">
+        </a>
+        <a href="https://www.npmjs.com/package/@vermaysha/discord-webhook">
+            <img src="https://img.shields.io/npm/dt/@vermaysha/discord-webhook.svg?style=flat-square" alt="Total Downloads">
+        </a>
+        <a href="LICENSE.md">
+            <img src="https://img.shields.io/github/license/vermaysha/discord-webhook?style=flat-square" alt="LICENSE">
+        </a>
+        <a href="https://github.com/vermaysha/discord-webhook/releases/latest">
+            <img src="https://img.shields.io/github/release-date/vermaysha/discord-webhook?style=flat-square" alt="GitHub Release Date - Published_At">
+        </a>
+    </p>
+  
+</div>
 
 Discord Webhook API Wrapper built using TypeScript which makes it easy to send webhooks.
 
