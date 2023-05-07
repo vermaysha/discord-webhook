@@ -1,4 +1,4 @@
-import axios, { AxiosInstance, AxiosPromise } from 'axios'
+import axios, { AxiosPromise } from 'axios'
 import type {
   IAttachment,
   IEmbed,
@@ -7,9 +7,10 @@ import type {
   IWebhookResponse,
 } from '../Interfaces'
 import { Embed } from './Embed'
+import { Request } from './Request'
 
 export class Webhook {
-  protected client: AxiosInstance
+  protected client: Request
 
   /**
    * Webhook username override.
@@ -47,9 +48,11 @@ export class Webhook {
    * @param webhookUrl
    */
   constructor(webhookUrl: string) {
-    this.client = axios.create({
-      baseURL: webhookUrl,
-    })
+    this.client = new Request(
+      axios.create({
+        baseURL: webhookUrl,
+      }),
+    )
   }
 
   /**
@@ -129,10 +132,7 @@ export class Webhook {
    */
   public async send() {
     return this.client
-      .request({
-        method: 'POST',
-        data: this.toObject(),
-      })
+      .send('POST', this.toObject())
       .then((res) => res)
       .catch((err) => {
         throw new Error(err?.response?.data?.message ?? err)
@@ -149,11 +149,8 @@ export class Webhook {
     options: IWebhookParameter,
   ): AxiosPromise<IWebhookResponse> {
     return this.client
-      .request({
-        method: 'PATCH',
-        data: options,
-      })
-      .then((res) => res)
+      .send('PATCH', options)
+      .then((res) => res as AxiosPromise<IWebhookResponse>)
       .catch((err) => {
         throw new Error(err?.response?.data?.message ?? err)
       })
@@ -166,10 +163,8 @@ export class Webhook {
    */
   public async get(): AxiosPromise<IWebhookResponse> {
     return this.client
-      .request({
-        method: 'GET',
-      })
-      .then((res) => res)
+      .send('GET', '')
+      .then((res) => res as AxiosPromise<IWebhookResponse>)
       .catch((err) => {
         throw new Error(err?.response?.data?.message ?? err)
       })
